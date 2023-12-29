@@ -23,8 +23,8 @@ const EditBlogs = () => {
     };
 
     return (
-        <div className="bg-base-200 py-10 px-40 min-h-screen">
-            <h2 className="text-4xl font-bold text-center mb-8">Add New Blog</h2>
+        <div className="bg-base-200 p-6 lg:py-10 lg:px-40 min-h-screen">
+            <h2 className="text-4xl font-bold text-center mb-8">Update Blog</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="flex gap-6">
@@ -90,7 +90,7 @@ const EditBlogs = () => {
                 </div>
 
                 <button className="btn btn-block mt-6 bg-blue-600 text-white hover:bg-blue-400 hover:text-black">
-                    Add Blog
+                    Update Blog
                 </button>
                 {/* <Button className="btn-block" text={'Add Task'}></Button> */}
             </form>

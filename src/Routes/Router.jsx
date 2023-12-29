@@ -6,6 +6,8 @@ import Home from "../Pages/Home/Home";
 import AddBlogs from "../Pages/AddBlogs/AddBlogs";
 import Blogs from "../Pages/Blogs/Blogs";
 import EditBlogs from "../Pages/EditBlogs/EditBlogs";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: '/login',
+        element: <Login />,
+    },
+    {
+        path: '/register',
+        element: <Register />,
+    }
 ]);
 
 export default router;
