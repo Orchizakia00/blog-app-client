@@ -1,12 +1,15 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const { signIn } = useAuth();
     const navigate = useNavigate();
+    
+    const location = useLocation();
+    const from = location.state?.from.pathname || "/";
 
     const onSubmit = async (data) => {
 
@@ -16,7 +19,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("User Logged In Successfully!");
-                navigate('/');
+                navigate(from, { replace: true });
             })
 
 

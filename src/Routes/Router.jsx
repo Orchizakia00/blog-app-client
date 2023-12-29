@@ -8,6 +8,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import EditBlogs from "../Pages/EditBlogs/EditBlogs";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -25,11 +26,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-blogs',
-                element: <AddBlogs />
+                element: <PrivateRoute><AddBlogs /></PrivateRoute>
             },
             {
                 path: '/edit-blogs/:id',
-                element: <EditBlogs />,
+                element: <PrivateRoute><EditBlogs /></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
             },
         ]
