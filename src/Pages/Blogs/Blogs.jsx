@@ -3,9 +3,11 @@ import useAxios from "../../Hooks/useAxios";
 import { Link } from "react-router-dom";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import useCurrentPath from "../../Hooks/useCurrentPath";
 
 const Blogs = () => {
     const axios = useAxios();
+    const currentPath = useCurrentPath();
 
     const { data: blogs = [], refetch } = useQuery({
         queryKey: ['blogs'],
@@ -75,6 +77,7 @@ const Blogs = () => {
                     </div>
                 </div>)
             }
+            <p>Current Path: {currentPath}</p>
         </div>
     );
 };
