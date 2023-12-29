@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../Componaents/Navbar/Navbar";
 
 
 const MainLayout = () => {
     return (
         <div>
-            <Outlet />
+            <Navbar />
+            <div className="w-[85%] mx-auto"><Outlet /></div>
         </div>
     );
 };
