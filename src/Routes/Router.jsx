@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: '/edit-blogs/:id',
                 element: <PrivateRoute><EditBlogs /></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/blogs/${params.id}`)
+                loader: ({params}) => fetch(`https://blog-application-server-lake.vercel.app/blogs/${params.id}`)
             },
         ]
     },
