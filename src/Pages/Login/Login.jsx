@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useCurrentPath from "../../Hooks/useCurrentPath";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
@@ -10,6 +11,7 @@ const Login = () => {
     
     const location = useLocation();
     const from = location.state?.from.pathname || "/";
+    const currentPath = useCurrentPath();
 
     const onSubmit = async (data) => {
 
@@ -69,6 +71,7 @@ const Login = () => {
                     </form>
                 </div>
             </div>
+            <p>Current Path: {currentPath}</p>
         </div>
     );
 };

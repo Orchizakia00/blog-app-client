@@ -2,12 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import useAxios from "../../Hooks/useAxios";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import useCurrentPath from "../../Hooks/useCurrentPath";
 
 const EditBlogs = () => {
     const { register, handleSubmit } = useForm();
     const axios = useAxios();
     const loadedBlog = useLoaderData();
     const { title, content, month, name, _id } = loadedBlog;
+    const currentPath = useCurrentPath();
 
     const onSubmit = async (data) => {
         console.log(data)
@@ -92,8 +94,8 @@ const EditBlogs = () => {
                 <button className="btn btn-block mt-6 bg-blue-600 text-white hover:bg-blue-400 hover:text-black">
                     Update Blog
                 </button>
-                {/* <Button className="btn-block" text={'Add Task'}></Button> */}
             </form>
+            <p className="mt-6">Current Path: {currentPath}</p>
         </div>
     );
 };

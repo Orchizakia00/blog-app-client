@@ -1,11 +1,13 @@
 import toast from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
 import { useForm } from "react-hook-form";
+import useCurrentPath from "../../Hooks/useCurrentPath";
 
 
 const AddBlogs = () => {
     const { register, handleSubmit, reset } = useForm();
     const axios = useAxios();
+    const currentPath = useCurrentPath();
 
     const onSubmit = async (data) => {
 
@@ -87,6 +89,7 @@ const AddBlogs = () => {
                     Add Blog
                 </button>
             </form>
+            <p className="mt-6">Current Path: {currentPath}</p>
         </div>
     );
 };

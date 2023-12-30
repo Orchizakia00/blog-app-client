@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            <p>{currentPath}</p>
+            <p>Current Path: {currentPath}</p>
         </div>
     );
 };

@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
+import useCurrentPath from "../../Hooks/useCurrentPath";
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-    const {createUser, updateUserProfile} = useAuth();
+    const { createUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const axios = useAxios();
+    const currentPath = useCurrentPath();
 
     const onSubmit = async (data) => {
 
@@ -95,6 +97,7 @@ const Register = () => {
                     </form>
                 </div>
             </div>
+            <p>Current Path: {currentPath}</p>
         </div>
     );
 };

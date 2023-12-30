@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const useCurrentPath = () => {
-    const location = useLocation();
-    return location.pathname;
-};
+function useCurrentPath() {
+  const [currentPathName, setCurrentPathName] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    const pathname = location.pathname;
+    setCurrentPathName(pathname);
+  }, [location]);
+
+  return currentPathName;
+}
 
 export default useCurrentPath;
