@@ -1,6 +1,6 @@
 # Blog Spot
 
-## Live Link:
+## Live Link: https://blog-spot-ad545.web.app
 
 ## Project Details:
 - Home page contains banner and footer.
